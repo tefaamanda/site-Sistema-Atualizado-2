@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Login - Finança Fácil</title>
+    <link rel="stylesheet" href="../static/css/login.css">
+    <link href="https://db.onlinewebfonts.com/c/2090551770be22b09600a40b0b4673b7?family=Avenir-Medium" rel="stylesheet">
+</head>
+<body>
+    <section class="formulario">
+        <div class="form-sec">
+            <section class="mensagem-importante-sec">
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="flashes">
+                    {% for message in messages %}
+                        <div class="flash-message">{{ message }}</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+            </section>
+            <form class="form" action="{{ url_for('login') }}" method="POST">
+              <span class="input-span">
+                <label for="email" class="label">E-mail</label>
+                <input type="email" name="email" id="email"
+              /></span>
+              <span class="input-span">
+                <label for="senha" class="label">Senha</label>
+                <input type="password" name="senha" id="senha"
+              /></span>
+              <input class="submit" type="submit" value="Entrar" />
+              <span class="span">Não tem uma conta? <a href="{{ url_for('cria_usuario') }}">Cadastre-se</a></span>
+              <a class="voltar" href="{{ url_for('index') }}">VOLTAR</a>
+
+            </form>
+        </div>
+    </section>
+<footer>
+
+</footer>
+</body>

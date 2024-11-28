@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="pt-br" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exclusão de Receita - Finança Fácil</title>
+        <link rel="stylesheet" href="../static/css/excluirReceita.css">
+    <link href="https://db.onlinewebfonts.com/c/2090551770be22b09600a40b0b4673b7?family=Avenir-Medium" rel="stylesheet">
+</head>
+<body class="conteudo">
+    <main class="conteudo">
+        <section class="formulario">
+            <h1>Tem certeza de que quer excluir a receita?</h1>
+
+            <!-- Formulário para confirmação -->
+            <div class="opt">
+                <form action="{{ url_for('deletarReceita', id=receita[0]) }}" method="post">
+                    <button type="submit" class="botao">
+                    <span class="button__text">Excluir</span>
+                    <span class="button__icon"><svg xmlns="http://www.w3.org/2000/svg" width="512" viewBox="0 0 512 512" height="512" class="svg"><title></title><path style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px" d="M112,112l20,320c.95,18.49,14.4,32,32,32H348c17.67,0,30.87-13.51,32-32l20-320"></path><line y2="112" y1="112" x2="432" x1="80" style="stroke:#fff;stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"></line><path style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px" d="M192,112V72h0a23.93,23.93,0,0,1,24-24h80a23.93,23.93,0,0,1,24,24h0v40"></path><line y2="400" y1="176" x2="256" x1="256" style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"></line><line y2="400" y1="176" x2="192" x1="184" style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"></line><line y2="400" y1="176" x2="320" x1="328" style="fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"></line></svg></span>
+                    </button>
+                </form>
+
+                <!-- Link para cancelar -->
+                <a href="{{ url_for('listaReceita') }}">
+                    <button class="botao-cancelar">
+                    <span class="button__text">Cancelar</span>
+                    </button>
+                </a>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

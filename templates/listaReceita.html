@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir='ltr'>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Receitas - Finança Fácil</title>
+    <link rel="stylesheet" href="../static/css/listaReceita.css">
+    <link href="https://db.onlinewebfonts.com/c/2090551770be22b09600a40b0b4673b7?family=Avenir-Medium" rel="stylesheet">
+</head>
+<body>
+    <!-- Início do cabeçalho -->
+   <!-- CABEÇALHO -->
+    <header>
+        <a href="{{ url_for('inicial') }}">
+            <img class="logo" src="../static/img/logo.png" alt="Logo da Empresa.">
+        </a>
+
+        <div class="group">
+            <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><g><path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"></path></g></svg>
+            <input placeholder="Search" type="search" class="input-importante">
+        </div>
+
+        <nav>
+            <div>
+                <a class="home" href="{{ url_for('inicial') }}">
+                    HOME>
+                </a>
+            </div>
+            <div>
+                <a class="receitas" href="{{ url_for('listaDespesa') }}">
+                    LISTA DESPESAS>
+                </a>
+            </div>
+        </nav>
+
+        <section class="botao-cab">
+            <a href="#contato">
+                <button class="botao-contato">
+                    <span class="transicao"></span>
+                    <span class="gradiente"></span>
+                    <span class="label-importante">CONTATO</span>
+                </button>
+            </a>
+        </section>
+
+        <section class="botao-cab">
+            <a href="{{ url_for('logout') }}">
+                <button class="botao-log">
+                    <span class="transicao-log"></span>
+                    <span class="gradiente-log"></span>
+                    <span class="label-importante-log">LOGOUT</span>
+                </button>
+            </a>
+            </a>
+        </section>
+    </header>
+    <section>
+    <h1>Lista de Receitas:</h1>
+        <span class="">
+        <center>
+        <table class="tabela-info">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Valor</th>
+                <th>Data</th>
+                <th>Descrição</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for receita in receitas %}
+                <tr>
+                    <td>{{ receita[1] }}</td>
+                    <td>{{ receita[2] }}</td>
+                    <td>{{ receita[3] }}</td>
+                    <td>{{ receita[4] }}</td>
+                    <td class="opcoes">
+                        <a href="{{ url_for('editarReceita', id=receita[0]) }}">
+                            <button class="edit-button">
+                            <svg class="edit-svgIcon" viewBox="0 0 512 512">
+                            <path d="M410.3 231l11.3-11.3-33.9-33.9-62.1-62.1L291.7 89.8l-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L387.7 253.7 410.3 231zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9L59.4 452l23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7L348.3 33.2 325.7 55.8 314.3 67.1l33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5L453.3 18.7c-25-25-65.5-25-90.5 0zm-47.4 168l-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z"></path>
+                            </svg>
+                            </button>
+                        </a>
+                        <form action="{{ url_for('excluirReceita', id=receita[0]) }} " method="GET"  style="display:inline;">
+                            <button type="submit" class="bin-button">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 39 7"
+                                class="bin-top"
+                            >
+                            <line stroke-width="4" stroke="white" y2="5" x2="39" y1="5"></line>
+                            <line
+                                  stroke-width="3"
+                                  stroke="white"
+                                  y2="1.5"
+                                  x2="26.0357"
+                                  y1="1.5"
+                                  x1="12"
+                            ></line>
+                            </svg>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 33 39"
+                                class="bin-bottom"
+                            >
+                            <mask fill="white" id="path-1-inside-1_8_19">
+                            <path
+                                    d="M0 0H33V35C33 37.2091 31.2091 39 29 39H4C1.79086 39 0 37.2091 0 35V0Z"
+                            ></path>
+                            </mask>
+                            <path
+                                  mask="url(#path-1-inside-1_8_19)"
+                                  fill="white"
+                                  d="M0 0H33H0ZM37 35C37 39.4183 33.4183 43 29 43H4C-0.418278 43 -4 39.4183 -4 35H4H29H37ZM4 43C-0.418278 43 -4 39.4183 -4 35V0H4V35V43ZM37 0V35C37 39.4183 33.4183 43 29 43V35V0H37Z"
+                            ></path>
+                            <path stroke-width="4" stroke="white" d="M12 6L12 29"></path>
+                            <path stroke-width="4" stroke="white" d="M21 6V29"></path>
+                            </svg>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 89 80"
+                                class="garbage"
+                            >
+                            <path
+                                  fill="white"
+                                  d="M20.5 10.5L37.5 15.5L42.5 11.5L51.5 12.5L68.75 0L72 11.5L79.5 12.5H88.5L87 22L68.75 31.5L75.5066 25L86 26L87 35.5L77.5 48L70.5 49.5L80 50L77.5 71.5L63.5 58.5L53.5 68.5L65.5 70.5L45.5 73L35.5 79.5L28 67L16 63L12 51.5L0 48L16 25L22.5 17L20.5 10.5Z"
+                            ></path>
+                            </svg>
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+        </span>
+        </center>
+        <br><br></br></br></br></br></br></br></br>
+     </section>
+<footer id="contato">
+    <div class="loader"></div>
+    <h2>Fale conosco!</h2>
+    <p>E-MAIL: financafacil@gmail.com</p>
+    <p>TELEFONE: (18)996543210</p>
+    <p class="p3">© 2024. Todos os direitos reservados.</p>
+</footer>

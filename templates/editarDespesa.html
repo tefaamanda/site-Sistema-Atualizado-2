@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edição de Despesas - Finança Fácil</title>
+    <link rel="stylesheet" href="../static/css/cadastroDespesa.css">
+
+    <!-- FONTE: AVENIR MEDIUM -->
+    <link href="https://db.onlinewebfonts.com/c/2090551770be22b09600a40b0b4673b7?family=Avenir-Medium" rel="stylesheet">
+</head>
+<body>
+    <!-- JAVASCRIPT -->
+    <script>
+        window.onload = function() {
+        document.getElementById("main-sec").style.opacity = 1;
+        };
+    </script>
+
+    <!-- CABEÇALHO -->
+    <header>
+        <a href="{{ url_for('inicial') }}">
+            <img class="logo" src="../static/img/logo.png" alt="Logo da Empresa.">
+        </a>
+
+        <div class="group">
+            <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><g><path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"></path></g></svg>
+            <input placeholder="Search" type="search" class="input-importante">
+        </div>
+
+        <nav>
+            <div>
+                <a class="home" href="{{ url_for('index') }}">
+                    HOME>
+                </a>
+            </div>
+            <div>
+                <a class="receitas" href="{{ url_for('cadastroReceita') }}">
+                    RECEITAS>
+                </a>
+            </div>
+        </nav>
+
+        <section class="botao-cab">
+            <a href="#contato">
+                <button class="botao-contato">
+                    <span class="transicao"></span>
+                    <span class="gradiente"></span>
+                    <span class="label-importante">CONTATO</span>
+                </button>
+            </a>
+        </section>
+
+        <section class="botao-cab">
+            <a href="{{ url_for('logout') }}">
+                <button class="botao-log">
+                    <span class="transicao-log"></span>
+                    <span class="gradiente-log"></span>
+                    <span class="label-importante-log">LOGOUT</span>
+                </button>
+            </a>
+        </section>
+    </header>
+
+    <!-- CONTEÚDO -->
+    <main id="main-sec" style="opacity: 0; transition: opacity 1s;">
+        <section class="secao-espaco"
+            </br></br></br></br>
+        </section>
+        <section class="formulario">
+            </br></br></br>
+            <form class="form"  action="{{ url_for('editarDespesa', id=despesa[0]) }}" method="post">
+                <p class="title">Registrar </p>
+                <p class="message">Registre suas despesas! </p>
+                    <div class="flex">
+                    <label for="nome">
+                        <input class="input" type="text" placeholder="" required="" id="nome" name="nome" value="{{ despesa[1] }}">
+                        <span>Nome</span>
+                    </label>
+                </div>
+
+                <label for="valor">
+                    <input class="input" type="number" placeholder="" required="" id="valor" name="valor" value="{{ despesa[2] }}">
+                    <span>Valor da despesa em R$</span>
+                </label>
+
+                <label for="data_despesa">
+                    <input class="input" type="date" placeholder="" required="" id="data_despesa" name="data_despesa" value="{{ despesa[3] }}">
+                    <span>Data: DD/MM/YYYY</span>
+                </label>
+                <label for="descricao">
+                    <input class="input" type="text" placeholder="" required="" id="descricao" name="descricao" value="{{ despesa[4] }}">
+                    <span>Descrição</span>
+                </label>
+                <button class="submit">Salvar Despesa</button>
+            </form>
+        </section>
+        <section class="secao-mensagem">
+            <span class="mensagem-acerto-erro">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    <div class="flash-messages">
+                        {% for category, message in messages %}
+                            <div class="flash {{ category }}">{{ message }}</div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+                {% endwith %}
+            </span>
+            </br>
+        </section>
+    </main>
+    <!-- RODAPÉ -->
+    <footer id="contato">
+        <div class="loader"></div>
+        <h2>Fale conosco!</h2>
+        <p><b>E-MAIL:</b> financafacil@gmail.com</p>
+        <p><b>TELEFONE:</b> (18)996543210</p>
+        <p class="p3">© 2024. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

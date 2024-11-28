@@ -1,0 +1,208 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+:root {
+    --titulo: #f3b706;
+    --subtitulo: #f39f06;
+    --botao: #f3b706;
+    --bot-hover: #f39f06;
+    --cab-e-rod: #000000;
+    --fonte-cab-e-rod: #ffffff;
+    --fonte: #000000;
+    --background: #f5f9f8;
+}
+
+/* CONTEÚDO */
+body {
+    background: url(../img/fundo-log.png);
+}
+
+.form {
+  --bg-light: #efefef;
+  --bg-dark: #707070;
+  --clr: #58bc82;
+  --clr-alpha: #9c9c9c60;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  max-width: 300px;
+  font-family: "Avenir-Medium";
+}
+
+.form .input-span {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.form input[type="text"],
+.form input[type="email"],
+.form input[type="password"] {
+  border-radius: 0.5rem;
+  padding: 1rem 0.75rem;
+  width: 100%;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--clr-alpha);
+  outline: 2px solid var(--bg-dark);
+  color: white;
+}
+
+.form input[type="email"]:focus,
+.form input[type="password"]:focus {
+  outline: 2px solid var(--titulo);
+  color: white;
+}
+
+.label {
+  align-self: flex-start;
+  color: var(--titulo);
+  font-weight: 600;
+}
+
+.form .submit {
+  padding: 1rem 0.75rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 3rem;
+  background-color: var(--bg-dark);
+  color: var(--bg-light);
+  border: none;
+  cursor: pointer;
+  transition: all 300ms;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-right: -20px;
+}
+
+.form .submit:hover {
+  background-color: var(--titulo);
+  color: var(--bg-dark);
+}
+
+.span {
+  text-decoration: none;
+  color: var(--background);
+}
+
+.span a {
+  color: var(--titulo);
+}
+
+.formulario {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+}
+
+.form-sec {
+    background-color: var(--cab-e-rod);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 40px;
+    max-width: 400px;
+    width: 25%;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.voltar {
+    text-decoration: underline;
+    color: #696969;
+    font-weight: bold;
+}
+
+.voltar:hover {
+    color: var(--titulo);
+}
+
+.mensagem-sec {
+    color: white;
+    font-family: "Avenir-Medium";
+    text-align: center;
+}
+@media (max-width: 1024px) {
+  .formulario {
+      padding-top: 80px;
+  }
+
+  .form-sec {
+      width: 70%;
+      padding: 30px;
+  }
+
+  .form {
+      max-width: 80%;
+  }
+
+  .form .submit {
+      font-size: 0.85rem;
+      padding: 1rem;
+  }
+
+  .form input[type="text"],
+  .form input[type="email"],
+  .form input[type="password"] {
+      font-size: 0.9rem;
+      padding: 0.85rem 0.75rem;
+  }
+
+  .mensagem-importante-sec {
+      font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .form {
+      max-width: 80%;
+  }
+
+  .form-sec {
+      width: 50%;
+      padding: 20px 35px;
+  }
+
+  .form .submit {
+      font-size: 0.8rem;
+  }
+
+}
+
+@media (max-width: 480px) {
+  .formulario {
+      padding-top: 38px;
+  }
+
+  .form-sec {
+      width: 64%;
+      border-radius: 10px;
+  }
+  .form .input-span {
+    gap: 0.3rem;
+  }
+  .form input[type="text"],
+  .form input[type="email"],
+  .form input[type="password"] {
+      padding: 0.70rem;
+      font-size: 0.85rem;
+  }
+  .form .submit {
+      font-size: 0.9rem;
+      padding: 0.75rem 0.5rem;
+  }
+
+  .mensagem-importante-sec {
+      font-size: 0.8rem;
+  }
+}

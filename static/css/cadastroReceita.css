@@ -1,0 +1,560 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+:root {
+    --cabeçalho: #000000;
+    --letracabecalho: #bfb290;
+    --titulo: #f3b706;
+    --subtitulo:  #f39f06;
+    --letra: ;
+    --fundo: #eff0e8;
+    --botao: #f3b706;
+    --botaohover: #f39f06;
+    --rodape:  #000000;
+    --botao: #f3b706;
+    --bot-hover: #f39f06;
+    --cab-e-rod: #000000;
+    --fonte-cab-e-rod: #ffffff;
+    --fonte: #000000;
+    --background: #f5f9f8;
+    --log: red;
+    --log-hover: #D30000;
+}
+
+/* CABEÇALHO */
+header {
+    background-color: var(--cab-e-rod);
+    display: flex;
+    flex-direction: row;
+}
+
+.logo {
+    width: 180px;
+}
+
+nav  {
+    display: flex;
+    padding-top: 80px;
+    padding-left: 40px;
+    padding-right: 40px;
+    gap: 30px;
+    font-size: 17px;
+    font-family: "Avenir-Medium";
+    font-weight: bold;
+}
+
+.home {
+    color: var(--fonte-cab-e-rod);
+}
+
+.home:hover {
+    color: var(--bot-hover);
+}
+
+.receitas {
+    color: var(--fonte-cab-e-rod);
+}
+
+.receitas:hover {
+    color: var(--bot-hover);
+}
+
+.botao-cab {
+    background-color: var(--cab-e-rod);
+}
+
+.botao-contato {
+    font-size: 17px;
+    padding: 1em 2.7em;
+    font-weight: 500;
+    background: var(--botao);
+    color: white;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.6em;
+    cursor: pointer;
+    margin: 60px;
+    margin-left: 20px;
+    margin-bottom: 50px;
+    font-weight: bold;
+    font-family: "Avenir-Medium";
+  }
+
+  .gradiente {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 0.6em;
+    margin-top: -0.25em;
+    background-image: linear-gradient(
+        rgba(7, 4, 0, 0),
+        rgba(7, 4, 0, 0),
+        rgba(68, 47, 0, 0.3)
+    );
+  }
+
+  .label-importante {
+    position: relative;
+    top: -1px;
+  }
+
+  .transicao {
+    transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    transition-duration: 500ms;
+    background-color: var(--bot-hover);
+    border-radius: 9999px;
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .botao-contato:hover .transicao {
+    width: 14em;
+    height: 14em;
+  }
+
+  .botao-contato:active {
+    transform: scale(0.97);
+  }
+
+
+section {
+    background-color: var(--background);
+}
+
+
+.group {
+    padding-left: 120px;
+    display: flex;
+    line-height: 28px;
+    align-items: center;
+    position: relative;
+    max-width: 190px;
+    }
+
+    .input-importante {
+    width: 100%;
+    height: 40px;
+    line-height: 28px;
+    padding: 0 1rem;
+    padding-left: 2.5rem;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    outline: none;
+    background-color: #f3f3f4;
+    color: #0d0c22;
+    transition: .3s ease;
+    }
+
+    .input-importante::placeholder {
+    color: #9e9ea7;
+    }
+
+    .input-importante:focus, input:hover {
+    outline: none;
+    border-color: rgba(234,76,137,0.4);
+    background-color: #fff;
+    box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
+    }
+
+    .icon {
+        padding-left: 120px;
+        position: absolute;
+        left: 1rem;
+        fill: #9e9ea7;
+        width: 1rem;
+        height: 1rem;
+    }
+/* tem menu de contexto */
+
+/* Css estrutura site */
+h1 {
+    text-align: center;
+    color: var(--titulo);
+    font-size: 30px;
+    padding-bottom: 20px;
+}
+
+.texto-topico {
+    color: var(--fonte);
+}
+
+ul {
+    padding-left: 20px;
+    color: var(--subtitulo);
+}
+
+.texto {
+    font-family: "Avenir-Medium";
+    padding: 60px;
+    padding-left: 160px;
+    padding-right: 160px;
+    text-align: justify;
+}
+
+.sub {
+    color: var(--subtitulo);
+}
+
+.formulario {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 40px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 350px;
+    padding: 30px;
+    padding-bottom: 55px;
+    padding-right: 115px;
+    border-radius: 20px;
+    position: relative;
+    background-color: #1a1a1a;
+    color: #fff;
+    border: 1px solid #333;
+  }
+
+  .title {
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: -1px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+    color: var(--titulo);
+    font-family: "Avenir-Medium";
+}
+
+  .title::before {
+    width: 18px;
+    height: 18px;
+  }
+
+  .title::after {
+    width: 18px;
+    height: 18px;
+    animation: pulse 1s linear infinite;
+  }
+
+  .title::before,
+  .title::after {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    left: 0px;
+    background-color: var(--titulo);
+  }
+
+  .message {
+    font-size: 14.5px;
+    color: rgba(255, 255, 255, 0.7);
+    font-family: "Avenir-Medium";
+  }
+
+  .flex {
+    display: flex;
+    width: 100%;
+    gap: 30px;
+  }
+
+  .form label {
+    position: relative;
+  }
+
+  .form label .input {
+    background-color: #333;
+    color: #fff;
+    width: 100%;
+    padding: 20px 05px 05px 10px;
+    outline: 0;
+    border: 1px solid rgba(105, 105, 105, 0.397);
+    border-radius: 10px;
+    padding-right: 75px;
+  }
+
+  .form label .input + span {
+    color: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    left: 10px;
+    top: 0px;
+    font-size: 0.9em;
+    cursor: text;
+    transition: 0.3s ease;
+    font-family: "Avenir-Medium";
+  }
+
+  .form label .input:placeholder-shown + span {
+    top: 12.5px;
+    font-size: 0.9em;
+  }
+
+  .form label .input:focus + span,
+  .form label .input:valid + span {
+    color: var(--botao);
+    top: 0px;
+    font-size: 0.7em;
+    font-weight: 600;
+  }
+
+  .input {
+    font-size: medium;
+  }
+
+  .submit {
+    border: none;
+    outline: none;
+    padding: 10px;
+    margin-right: -87px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+    transform: .3s ease;
+    background-color: var(--botao);
+  }
+
+  .submit:hover {
+    background-color: var(--bot-hover);
+  }
+
+  @keyframes pulse {
+    from {
+      transform: scale(0.9);
+      opacity: 1;
+    }
+
+    to {
+      transform: scale(1.8);
+      opacity: 0;
+    }
+  }
+
+
+  footer {
+    position: relative;
+    background-color: var(--cab-e-rod);
+    color: var(--titulo);
+    padding: 20px;
+    text-align: left;
+    font-family: "Avenir-Medium";
+}
+
+.p3 {
+    text-align: center;
+}
+
+.loader {
+    transform: translateZ(1px);
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .loader:after {
+    content: '$';
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    font-size: 32px;
+    font-weight: bold;
+    background: #FFD700;
+    color: #DAA520;
+    border: 4px double;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, .1);
+    animation: coin-flip 4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+  }
+
+  @keyframes coin-flip {
+    0%, 100% {
+      animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
+    }
+
+    0% {
+      transform: rotateY(0deg);
+    }
+
+    50% {
+      transform: rotateY(1800deg);
+      animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
+    }
+
+    100% {
+      transform: rotateY(3600deg);
+    }
+  }
+.secao-espaco {
+    background: var(--background);
+}
+
+.mensagem-acerto-erro {
+    padding-bottom: 50px;
+    color: green;
+    font-family: "Avenir-Medium";
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+}
+
+.secao-mensagem {
+    background-color: var(--background);
+}
+/* Rodape */
+
+footer {
+    position: relative;
+    background-color: var(--rodape);
+    color: var(--titulo);
+    padding: 20px;
+    text-align: left;
+    font-family: "Avenir-Medium";  
+}
+
+.p3 {
+    text-align: center;
+}
+
+.loader {
+    transform: translateZ(1px);
+    position: absolute; 
+    bottom: 20px; 
+    right: 20px; 
+    width: 48px; 
+    height: 48px; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+  }
+   
+  .loader:after {
+    content: '$';
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    font-size: 32px;
+    font-weight: bold;
+    background: #FFD700;
+    color: #DAA520;
+    border: 4px double;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, .1);
+    animation: coin-flip 4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+  }
+   
+  @keyframes coin-flip {
+    0%, 100% {
+      animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
+    }
+   
+    0% {
+      transform: rotateY(0deg);
+    }
+   
+    50% {
+      transform: rotateY(1800deg);
+      animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
+    }
+   
+    100% {
+      transform: rotateY(3600deg);
+    }
+  }
+
+  .mensagem-acerto-erro {
+    padding-bottom: 50px;
+    color: green;
+    font-family: "Avenir-Medium";
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+}
+
+.secao-mensagem {
+    background-color: var(--background);
+}
+
+/* BOTÃO LOGOUT */
+.botao-log {
+    font-size: 17px;
+    padding: 1em 2.7em;
+    font-weight: 500;
+    background: var(--log);
+    color: white;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.6em;
+    cursor: pointer;
+    margin: 60px;
+    margin-left: 20px;
+    margin-bottom: 50px;
+    font-weight: bold;
+    font-family: "Avenir-Medium";
+  }
+
+  .gradiente-log {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 0.6em;
+    margin-top: -0.25em;
+    background-image: linear-gradient(
+        rgba(7, 4, 0, 0),
+        rgba(7, 4, 0, 0),
+        rgba(68, 47, 0, 0.3)
+    );
+  }
+
+  .label-importante-log {
+    position: relative;
+    top: -1px;
+  }
+
+  .transicao-log {
+    transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    transition-duration: 500ms;
+    background-color: var(--log-hover);
+    border-radius: 9999px;
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .botao-log:hover .transicao-log {
+    width: 14em;
+    height: 14em;
+  }
+
+  .botao-log:active {
+    transform: scale(0.97);
+  }
